@@ -13,7 +13,11 @@
             <h2><?php the_title(); ?></h2>
           </header>
           <section>
-            <?php the_excerpt(); ?>
+            <?php if ( is_singular() ) : ?>
+   	        	<?php the_content(); ?>
+   	        <?php else: ?>	
+   	        	<?php the_excerpt(); ?>
+   	        <?php endif; ?>
           </section>
           <footer>
             <time><?php the_time( 'Y.n.j.' ); ?></time>
