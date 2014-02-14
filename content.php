@@ -10,7 +10,7 @@
         <?php   while ( have_posts() ): the_post(); ?>
         <article <?php post_class(); ?>>
           <header>
-            <h2><?php the_title(); ?></h2>
+            <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
           </header>
           <section>
             <?php if ( is_singular() ) : ?>
@@ -27,3 +27,4 @@
         </article>
         <?php   endwhile; ?>
         <?php endif; ?>
+        <?php comments_template(); ?>

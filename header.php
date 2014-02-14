@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/main.css">
         <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
