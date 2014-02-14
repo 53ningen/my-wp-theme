@@ -7,23 +7,34 @@
  */
 
 if ( ! isset( $content_width ) )
-     $content_width = 585;
+     $content_width = 800;
  
-if ( ! function_exists( 'hoho_setup' ) ):
-    function hoho_setup() {
-        // ここに add_theme_support を書いていく
+if ( ! function_exists( 'gomi_setup' ) ):
+    function gomi_setup() {
+        /**
+         * RSS Feed
+         * @since WordPress 3.0
+         */
+        add_theme_support( 'automatic-feed-links' );
+        // アイキャッチを有効化
+        add_theme_support( 'post-thumbnails' );
+        // カスタム背景有効化
+        add_theme_support( 'custom-background' );
+        // カスタムヘッダー画像有効化
+        add_theme_support( 'custom-header' );
+        // コメントフォーム、検索フォーム、コメントリストを html5 マークアップにしてくれる
+        add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form' ) );
+        // ビジュアルエディタ用の css 読み込み
+        add_editor_style( 'css/screen.css' );
+        // メニューを登録
+        register_nav_menu( 'primary', 'ヘッダーのメニュー' );
     }
 endif;
 
-// 'after_setup_theme' フックが実行された時に 'hoho_setup' 関数を実行する処理
-add_action( 'after_setup_theme', 'hoho_setup' );
+// 'after_setup_theme' フックが実行された時に 'gomi_setup' 関数を実行する処理
+add_action( 'after_setup_theme', 'gomi_setup' );
 
 
-/**
- * RSS Feed
- * @since WordPress 3.0
- */
-add_theme_support( 'automatic-feed-links' );
 
 
 // sidebar definition

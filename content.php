@@ -16,6 +16,7 @@
             <?php if ( is_singular() ) : ?>
    	        	<?php the_content(); ?>
    	        <?php else: ?>	
+   	        	<?php if( has_post_thumbnail() ){ the_post_thumbnail("thumbnail"); }; ?>
    	        	<?php the_excerpt(); ?>
    	        <?php endif; ?>
           </section>
@@ -23,7 +24,7 @@
             <time><?php the_time( 'Y.n.j.' ); ?></time>
             <?php the_category(); ?>
             <?php the_tags(); ?>
-          </footer>
+          </footer>ß
         </article>
         <?php   endwhile; ?>
         <?php endif; ?>
