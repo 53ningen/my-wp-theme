@@ -1,6 +1,6 @@
 <?php
 /**
- * 投稿のテンプレートファイル
+ * 固定ページのテンプレートファイル
  *
  * @package    WordPress
  * @subpackage Hoho
