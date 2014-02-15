@@ -35,4 +35,4 @@
  
 </div>
  
-<?php comment_form(); // コメントフォームを呼び出す ?>
+<?php comment_form(); ?>

@@ -24,7 +24,7 @@
             <time><?php the_time( 'Y.n.j.' ); ?></time>
             <?php the_category(); ?>
             <?php the_tags(); ?>
-          </footer>ß
+          </footer>
         </article>
         <?php   endwhile; ?>
         <?php endif; ?>
