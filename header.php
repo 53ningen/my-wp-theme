@@ -14,7 +14,7 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title><?php wp_title(); ?></title>
+        <title><?php wp_title(' ', true, 'right'); ?><?php bloginfo('name'); ?></title>
         <meta name="description" content="<?php bloginfo(); ?>">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap.min.css">
@@ -41,45 +41,37 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><?php wp_title(); ?></a>
+          <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact"><?php wp_mail(); ?></a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+        <div class="navbar-collapse collapse">    
+          <nav>
+            <?php wp_nav_menu(array(
+              'theme_location'  => '',
+              'menu'            => '',
+              'container'       => 'false',
+              'container_class' => '',
+              'container_id'    => '',
+              'menu_class'      => 'nav navbar-nav',
+              'menu_id'         => '',
+              'echo'            => true,
+              'fallback_cb'     => 'wp_page_menu',
+              'before'          => '',
+              'after'           => '', 
+              'link_before'     => '',
+              'link_after'      => '',
+              'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+              'depth'           => 1,
+              'walker'          => ''
+            )); ?>
+          </nav>
+          <?php get_search_form(); ?>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div class="container">
       <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+       
       </div>
     </div>
     <div class="container">

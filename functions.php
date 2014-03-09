@@ -56,3 +56,16 @@ register_sidebar( $args = array(
         // ウィジェットタイトルの後に配置する HTML
         'after_title'   => '</h3>' )
 );
+
+
+
+//カスタムメニューのIDやクラスを簡略化
+// function my_css_attributes_filter($var) {
+//     return is_array($var) ? array_intersect($var, array('current-menu-item')) : '' ;
+// }
+//add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
+//add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
+//add_filter('page_css_class', 'my_css_attributes_filter', 100, 1);
+
+
+
